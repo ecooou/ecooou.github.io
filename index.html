@@ -306,6 +306,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 
 /* v8: views, gallery, more links */
 [data-view][hidden]{display:none}
+section[id],article[id]{scroll-margin-top:64px}
 .journey .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .journey .track.assess{background:rgba(248,221,106,.16);border-color:var(--butter)}
 .journey .track .role{display:block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--butter);margin-bottom:4px;line-height:1.3}
@@ -351,6 +352,22 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 .portrait .dot{position:absolute;left:-22px;top:28px;width:44px;height:44px;border-radius:50%;background:var(--butter);z-index:2}
 @media (max-width:860px){.portrait{justify-self:start;width:min(78%,340px);margin-top:8px}.portrait .sun{right:-24px;bottom:-22px;width:110px;height:110px}.portrait .dot{left:-14px;width:32px;height:32px}}
 
+.ecard{padding:14px 14px 22px}
+.ecard b,.ecard p,.ecard span:last-child{padding-inline:10px}
+.ecard .thumb{display:block;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#EEF2FD;margin-top:0;margin-bottom:8px;padding:0}
+.ecard .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.ecard:hover .thumb img{transform:scale(1.03)}
+
+.photo-link{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:28px;align-items:center;margin-top:88px;text-decoration:none;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);border-radius:22px;padding:22px;transition:border-color .2s,transform .2s}
+.photo-link:hover{border-color:var(--butter);transform:translateY(-3px)}
+.pl-text{display:flex;flex-direction:column;gap:6px;padding-left:8px;min-width:0}
+.pl-text .eyebrow{color:var(--butter)}
+.pl-text b{font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.05}
+.pl-go{font-weight:600;opacity:.9}
+.pl-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;min-width:0}
+.pl-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;transition:transform .3s}
+.photo-link:hover .pl-strip img{transform:scale(1.02)}
+@media (max-width:760px){.photo-link{grid-template-columns:1fr}.pl-text{padding-left:0}}
 /* lightbox */
 .lb[hidden]{display:none}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(8,12,30,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
@@ -366,7 +383,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
     <ul>
       <li><a class="l" href="#work">Case studies</a></li>
       <li><a class="l" href="#design">Brand design</a></li>
-      <li><a class="l" href="#hci" data-nav="hci">Product &amp; UX</a></li>
+      <li><a class="l" href="#hci">Product &amp; UX</a></li>
       <li><a class="l" href="#photography" data-nav="photography">Photography</a></li>
       <li><a class="l" href="#about">About</a></li>
       <li><a class="l cta" href="#contact">Contact</a></li>
@@ -419,9 +436,9 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
         <h3>AgentCore Demo Center: making a one-day summit hit work all year</h3>
         <p class="beat"><span class="k">Challenge</span>AgentCore demos were a hit at AWS Summit, but the summit happens once a year and each demo needed an expert to explain it.</p>
         <ul>
-          <li><span class="lbl">Strategy.</span> Turned a loose "reuse the demos" ask into an always-on, self-serve website.</li>
+          <li><span class="lbl">Strategy.</span> Turned one-time event demos into an always-on, self-serve website.</li>
           <li><span class="lbl">Journey.</span> Designed the funnel from first click to deployment for developers and tech leads.</li>
-          <li><span class="lbl">Scale.</span> Shipped 15+ interactive guides with a spec-driven AI workflow.</li>
+          <li><span class="lbl">Scale.</span> Shipped 15+ interactive guides and authored all-site content with a spec-driven AI workflow.</li>
         </ul>
         <p class="beat impact"><span class="k">Impact</span>Built from zero to one and used as an asset in the Gen AI campaign.</p>
       </div>
@@ -457,7 +474,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
         <p class="beat"><span class="k">Insight</span>Customers rarely want to discuss their challenges on stage. I gave them a five-part story frame, from business context to why AWS to results, so each story showed the product's role while staying true to the customer's voice.</p>
         <div class="nums">
           <div class="num"><b>2</b><span>keynote customer stories</span></div>
-          <div class="num"><b>~7</b><span>revision rounds to final</span></div>
+          <div class="num"><b>~7</b><span>revision rounds across 4 teams to final</span></div>
         </div>
         <a class="textlink" href="https://events.amazoncloud.cn/summit-2026/keynote1" target="_blank" rel="noopener">See the keynote lineup ↗</a>
       </div>
@@ -559,13 +576,27 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
       </div>
     </div>
 
-    <div class="more">
-      <a class="more-card" href="#hci"><span class="eyebrow">Earlier work</span><b>Product and UX projects</b><span>See the projects →</span></a>
-      <a class="more-card" href="#photography"><span class="eyebrow">Gallery</span><b>Photography</b><span>See the photos →</span></a>
-    </div>
+    <a class="photo-link" href="#photography">
+      <div class="pl-text"><span class="eyebrow">More visual work</span><b>Photography</b><span class="pl-go">See the gallery →</span></div>
+      <div class="pl-strip" aria-hidden="true"><img src="img/photo/fr06.jpg" alt=""><img src="img/photo/fr02.jpg" alt=""><img src="img/d.jpg" alt=""></div>
+    </a>
   </div>
 </section>
 
+
+<section class="earlier band" id="hci">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Earlier work</span><h2>Product and UX projects</h2></div>
+      <p>Before marketing, I built products as an HCI student. These taught me to start from the user.</p>
+    </div>
+    <div class="cards">
+      <a class="ecard" href="https://cs.wellesley.edu/~agp/index.html" target="_blank" rel="noopener"><span class="thumb"><img src="img/hci_goodplace.jpg" width="800" height="500" alt="The Good Place app landing page" loading="lazy"></span><b>The Good Place</b><p>A mental health app for Wellesley students. It works as an emotion tracker, a digital support animal and a guide to campus resources.</p><span>View project ↗</span></a>
+      <a class="ecard" href="https://ecooou.github.io/Echo-He/WellesleyFAQ.html" target="_blank" rel="noopener"><span class="thumb"><img src="img/hci_nico.jpg" width="800" height="500" alt="Ask Nico post page with an AI answer" loading="lazy"></span><b>Wellesley Ask Nico</b><p>A community FAQ where students answer each other's academic questions, with AI answers trained on official Wellesley resources.</p><span>View project ↗</span></a>
+      <a class="ecard" href="https://ecooou.github.io/bob/" target="_blank" rel="noopener"><span class="thumb"><img src="img/hci_bob.jpg" width="800" height="500" alt="BOB soft toy prototype next to a laptop" loading="lazy"></span><b>BOB</b><p>Research on soft toys as tangible interfaces. It encourages students to build stress-reducing habits without another app.</p><span>View project ↗</span></a>
+    </div>
+  </div>
+</section>
 
 <section class="about band" id="about">
   <div class="wrap sec">
@@ -616,22 +647,6 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 </section>
 </div>
 
-<div data-view="hci" hidden>
-<section class="earlier band page">
-  <div class="wrap sec">
-    <a class="back" href="#work">← Back to work</a>
-    <div class="sec-head">
-      <div><span class="eyebrow">Earlier work</span><h2>Product and UX projects</h2></div>
-      <p>Before marketing, I built products as an HCI student. These taught me to start from the user.</p>
-    </div>
-    <div class="cards">
-      <a class="ecard" href="https://cs.wellesley.edu/~agp/index.html" target="_blank" rel="noopener"><b>The Good Place</b><p>A mental health app for Wellesley students. It works as an emotion tracker, a digital support animal and a guide to campus resources.</p><span>View project ↗</span></a>
-      <a class="ecard" href="https://ecooou.github.io/Echo-He/WellesleyFAQ.html" target="_blank" rel="noopener"><b>Wellesley Ask Nico</b><p>A community FAQ where students answer each other's academic questions, with AI answers trained on official Wellesley resources.</p><span>View project ↗</span></a>
-      <a class="ecard" href="https://ecooou.github.io/bob/" target="_blank" rel="noopener"><b>BOB</b><p>Research on soft toys as tangible interfaces. It encourages students to build stress-reducing habits without another app.</p><span>View project ↗</span></a>
-    </div>
-  </div>
-</section>
-</div>
 
 <section class="contact band" id="contact">
   <div class="wrap">
@@ -665,7 +680,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
   document.getElementById('lbClose').addEventListener('click',close);
   lb.addEventListener('click',function(e){if(e.target===lb)close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
-  var pages=['photography','hci'];
+  var pages=['photography'];
   function route(){
     var h=(location.hash||'').slice(1), v=pages.indexOf(h)>-1?h:'home';
     document.querySelectorAll('[data-view]').forEach(function(el){el.hidden=el.getAttribute('data-view')!==v});
