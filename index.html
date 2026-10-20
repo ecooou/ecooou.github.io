@@ -381,7 +381,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
       <span class="eyebrow">Portfolio &nbsp;/&nbsp; New York</span>
       <h1>Echo<br><em>He</em></h1>
       <p class="lead">Product Marketing and Strategy</p>
-      <p class="sub">Product marketer and MS Business Analytics candidate at Columbia University, with experience in go-to-market strategy, customer journey design and campaign analytics. Strong analytical and visual skills, with a track record of turning complex technology into clear, measurable marketing at AWS, IPG Mediabrands and DHgate.</p>
+      <p class="sub">Product marketer and MS Business Analytics candidate at Columbia University, with experience in go-to-market strategy, customer journey design and campaign analytics. Strong analytical skills, with a track record of turning complex technology into clear, measurable marketing at AWS, IPG Mediabrands and DHgate.</p>
       <div class="btns">
         <a class="btn solid" href="#work">See my work</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -575,10 +575,10 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
     <div style="display:grid;gap:32px;min-width:0">
       <div class="txt">
         <p>I studied Human-Computer Interaction at Wellesley, with minors in Economics and History. I am now finishing an MS in Business Analytics at Columbia.</p>
-        <p>I have studied in Scandinavia, the US and Asia, and I work in English and Chinese. I am most interested in B2B technology, developer communities and community-led growth.</p>
+        <p>I have studied in the US, Scandinavia, and Asia. I am most interested in B2B technology, agentic AI, and developer communities.</p>
       </div>
       <dl class="facts">
-        <div class="fact"><dt>Education</dt><dd>Columbia University, MS Business Analytics, Dec 2026<br>Wellesley College, BA Human-Computer Interaction, summa cum laude</dd></div>
+        <div class="fact"><dt>Education</dt><dd>Columbia University, MS Business Analytics, Dec 2026<br>Wellesley College, BA Media Arts and Sciences, summa cum laude</dd></div>
         <div class="fact"><dt>Languages</dt><dd>English, Chinese</dd></div>
         <div class="fact"><dt>Location</dt><dd>New York</dd></div>
       </dl>
@@ -596,6 +596,8 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
       <h2>Photography</h2>
     </div>
     <div class="gallery">
+        <figure><img src="img/photo/fr06.jpg" width="1364" height="924" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
+        <figure><img src="img/photo/fr02.jpg" width="1400" height="933" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/d.jpg" width="1400" height="795" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/photo/fr01.jpg" width="1400" height="933" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/b.jpg" width="1246" height="813" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
@@ -608,9 +610,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
         <figure><img src="img/photo/fr09.jpg" width="1115" height="1400" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/photo/fr05.jpg" width="1400" height="1127" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/photo/fr08.jpg" width="1050" height="1400" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
-        <figure><img src="img/photo/fr02.jpg" width="1400" height="933" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
         <figure><img src="img/photo/fr04.jpg" width="1400" height="1031" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
-        <figure><img src="img/photo/fr06.jpg" width="1364" height="924" alt="Photograph by Echo He" data-cap="Photograph by Echo He" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -637,14 +637,14 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
   <div class="wrap">
     <h2>Get in touch.</h2>
     <div class="btns">
-      <a class="btn solid" href="#contact" data-todo="resume">Resume</a>
-      <a class="btn" href="#contact" data-todo="linkedin">LinkedIn</a>
-      <a class="btn" href="#contact" data-todo="email">Email</a>
+      <a class="btn solid" href="Echo_He_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="https://www.linkedin.com/in/echo-he-385118209/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:mh4719@columbia.edu" title="mh4719@columbia.edu">Email</a>
     </div>
   </div>
 </section>
 
-<footer class="band"><div class="wrap"><span>© 2026 Echo He</span><a href="#photography" style="color:inherit">Photography</a></div></footer>
+<footer class="band"><div class="wrap"><span>© 2026 Echo He</span></div></footer>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
   <button type="button" id="lbClose">Close</button>
@@ -681,7 +681,7 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
     var cols=[],h=[];
     for(var i=0;i<n;i++){var c=document.createElement('div');c.className='gcol';gal.appendChild(c);cols.push(c);h.push(0)}
     function ratio(f){var im=f.querySelector('img');return (+im.getAttribute('height'))/(+im.getAttribute('width'))||1}
-    var lead=gItems.slice(0,4),rest=gItems.slice(4).sort(function(x,y){return ratio(y)-ratio(x)});
+    var lead=gItems.slice(0,6),rest=gItems.slice(6).sort(function(x,y){return ratio(y)-ratio(x)});
     lead.concat(rest).forEach(function(f,i){
       var k=i<n?i:h.indexOf(Math.min.apply(null,h));
       cols[k].appendChild(f);h[k]+=ratio(f)+0.13;
