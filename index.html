@@ -13,6 +13,8 @@ img{max-width:100%}
 </style>
 
 <meta name="claude:viewport-fit-sides" content="cover">
+
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -226,7 +228,9 @@ figcaption{font-size:.84rem;opacity:.8;margin-top:8px}
 /* earlier */
 .earlier{background:var(--butter);color:var(--on-butter)}
 .earlier .sec{padding-block:72px}
-.earlier .sec-head{margin-bottom:32px}
+.earlier .sec-head{margin-bottom:36px;display:block}
+.earlier .sec-head p{max-width:68ch;margin-top:18px;font-size:1.05rem;line-height:1.6;opacity:1;color:#3B3A2E}
+.earlier .sec-head p strong{display:block;font-family:var(--display);font-size:clamp(1.25rem,2vw,1.5rem);font-weight:700;color:var(--on-butter);opacity:1;margin-bottom:6px;line-height:1.25}
 .earlier .sec-head h2{font-size:clamp(2.2rem,5vw,3.4rem)}
 .earlier .sec-head p{color:var(--on-butter);opacity:.78}
 .earlier .sec-head .eyebrow{color:var(--brick)}
@@ -241,6 +245,7 @@ figcaption{font-size:.84rem;opacity:.8;margin-top:8px}
 /* about */
 .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .about h2{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800}
+.about .about-lead{font-family:var(--display);font-size:clamp(1.3rem,2.2vw,1.6rem);font-weight:700;line-height:1.3;color:var(--ink)}
 .about .txt{display:grid;gap:16px;font-size:1.08rem;max-width:58ch}
 .facts{display:grid;gap:0;border-top:2px solid var(--line)}
 .fact{display:grid;grid-template-columns:130px 1fr;gap:16px;padding-block:14px;border-bottom:2px solid var(--line)}
@@ -388,6 +393,57 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
 .pl-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;transition:transform .3s}
 .photo-link:hover .pl-strip img{transform:scale(1.02)}
 @media (max-width:760px){.photo-link{grid-template-columns:1fr}.pl-text{padding-left:0}}
+/* proto4: more visual work tiles */
+.more-row{margin-top:88px}
+.more-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--butter);margin-bottom:22px}
+.more-row .photo-link{margin-top:0}
+.more-row .photo-link + .photo-link{margin-top:18px}
+.photo-link.feat{border-color:var(--butter);background:rgba(255,255,255,.13)}
+.more-row .photo-link .kind{align-self:flex-start;margin-bottom:6px}
+.pl-desc{opacity:.88;font-size:.98rem;max-width:30ch;margin-top:2px}
+.more-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.tile{display:flex;flex-direction:column;text-decoration:none;color:var(--cobalt-ink);background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);border-radius:20px;overflow:hidden;transition:border-color .2s,transform .2s;min-width:0}
+.tile:hover{border-color:var(--butter);transform:translateY(-3px)}
+.tile-img{display:block;aspect-ratio:16/10;overflow:hidden}
+.tile-img img{display:block;width:100%;height:100%;object-fit:cover}
+.tile-img.poster{background:rgba(255,255,255,.1);padding:22px;display:flex;justify-content:center}
+.tile-img.poster img{width:auto;height:100%;object-fit:contain;border-radius:6px;box-shadow:0 14px 30px rgba(5,12,40,.35)}
+.tile-img.grid4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+.tile-text{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 20px}
+.tile-text b{font-family:var(--display);font-size:1.35rem;line-height:1.1}
+.tile-go{margin-left:auto;font-weight:600;font-size:.95rem}
+@media (max-width:700px){.more-grid{grid-template-columns:1fr}.more-row{margin-top:56px}}
+.design a.back-link{display:inline-block;font-weight:600;text-decoration:none;margin-bottom:28px;opacity:.85;color:var(--cobalt-ink)}
+.design a.back-link:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+/* proto6: analytics section */
+.an-sec{border-top:2px solid var(--line)}
+.an-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.an-card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px 18px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.an-res{background:var(--chip);border-radius:14px;padding:14px 16px;height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;min-width:0}
+.an-res svg{display:block;width:100%;height:100%;overflow:visible}
+.an-res .ax{stroke:var(--muted);stroke-opacity:.35}
+.an-res .b1{fill:var(--sky);fill-opacity:.6}
+.an-res .b2{fill:var(--tangerine)}
+.an-res text{font-family:var(--body);fill:var(--muted)}
+.an-res text.v{font-family:var(--display);font-weight:800;font-size:17px;fill:var(--ink)}
+.an-res text.hi{fill:var(--tangerine)}
+.an-res text.l{font-size:11px;font-weight:600}
+.an-res.big{flex-direction:column;align-items:flex-start}
+.an-res.big b{font-family:var(--display);font-weight:800;font-size:3.2rem;line-height:1;color:var(--tangerine);font-variant-numeric:tabular-nums}
+.an-res.big span{margin-top:8px;font-size:.9rem;color:var(--muted);font-weight:600}
+.an-res.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end;align-content:center}
+.an-res.seg span{height:44px;border-radius:10px;background:var(--sky);opacity:.5}
+.an-res.seg span.hi{opacity:1;background:var(--tangerine);height:64px;color:#101A3A;font-size:.72rem;font-weight:700;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.an-res.seg em{grid-column:1/-1;font-style:normal;font-size:.9rem;font-weight:600;color:var(--muted)}
+.an-tools{display:flex;flex-wrap:wrap;gap:6px}
+.an-tools i{font-style:normal;font-size:.8rem;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--cobalt);color:var(--cobalt-ink)}
+.an-tools i + i{background:var(--chip);color:var(--ink)}
+.an-card h3{font-size:1.3rem;font-weight:700}
+.an-card p{color:var(--muted);font-size:.97rem}
+.an-stack{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:28px}
+.an-stack span{font-weight:700;font-size:.9rem;margin-right:4px}
+.an-stack i{font-style:normal;font-size:.85rem;font-weight:600;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px}
+@media (max-width:980px){.an-grid{grid-template-columns:1fr}}
 /* lightbox */
 .lb[hidden]{display:none}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(8,12,30,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
@@ -395,6 +451,7 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
 .lb p{color:#F4EFE3;font-size:.95rem;text-align:center;max-width:60ch}
 .lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));background:#F8DD6A;color:#101A3A;border:0;border-radius:999px;font:600 .95rem var(--body);padding:8px 16px;cursor:pointer}
 </style>
+
 
 </head>
 <body>
@@ -539,15 +596,49 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
       </div>
     </article>
 
-    <div class="toolkit">
-      <h3>Exploring marketing questions through data</h3>
-      <div class="tk">
-        <div><b>Audience testing on Google Ads</b><p>For a protein powder brand, I A/B tested gym and yoga audiences. Neither audience won clearly, but certain keywords did. Rebuilding the campaign around those keywords drove core keyword CTR to 12%.</p></div>
-        <div><b>Finding high-intent shoppers</b><p>Using 2.5M+ e-commerce events, I explored how browsing depth, category breadth and click speed relate to purchasing. The model reached 0.95 AUC, with steady engagement emerging as a useful buying signal.</p></div>
-        <div><b>Segmentation for media planning</b><p>Using PCA and K-means on Ford Ka consumer research, I identified four psychographic segments. The analysis pointed to fashion-oriented buyers as a priority audience for media planning.</p></div>
-      </div>
-      <p class="tools"><b>Tools:</b> Python, Google Analytics 4 (certified), Google Ads, Kiro</p>
+  </div>
+</section>
+
+<section class="band an-sec" id="analytics">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Analytics</span><h2>Exploring marketing questions through data</h2></div>
+      <p>My analytics training at Columbia shaped how I approach marketing. I treat every campaign as a question I can test, and every dataset as a chance to understand customers better.</p>
     </div>
+    <div class="an-grid">
+      <article class="an-card">
+        <div class="an-res">
+          <svg viewBox="0 0 220 110" role="img" aria-label="Campaign CTR 4.2 percent versus core keyword CTR 12 percent">
+            <line x1="0" y1="88" x2="220" y2="88" class="ax"/>
+            <rect x="28" y="65" width="56" height="23" rx="5" class="b1"/>
+            <rect x="136" y="18" width="56" height="70" rx="5" class="b2"/>
+            <text x="56" y="58" text-anchor="middle" class="v">4.2%</text>
+            <text x="164" y="12" text-anchor="middle" class="v hi">12%</text>
+            <text x="56" y="104" text-anchor="middle" class="l">Campaign CTR</text>
+            <text x="164" y="104" text-anchor="middle" class="l">Core keywords</text>
+          </svg>
+        </div>
+        <div class="an-tools"><i>Google Ads</i><i>A/B testing</i></div>
+        <h3>Audience testing on Google Ads</h3>
+        <p>For a protein powder brand, I A/B tested gym and yoga audiences. Neither audience won clearly, but certain keywords did. Rebuilding the campaign around those keywords drove core keyword CTR to 12%.</p>
+      </article>
+      <article class="an-card">
+        <div class="an-res big"><b>0.95</b><span>AUC on 2.5M+ e-commerce events</span></div>
+        <div class="an-tools"><i>Python</i><i>Predictive modeling</i></div>
+        <h3>Finding high-intent shoppers</h3>
+        <p>Using 2.5M+ e-commerce events, I explored how browsing depth, category breadth and click speed relate to purchasing. The model reached 0.95 AUC, with steady engagement emerging as a useful buying signal.</p>
+      </article>
+      <article class="an-card">
+        <div class="an-res seg" aria-label="Four segments, one marked as the priority audience">
+          <span></span><span></span><span></span><span class="hi">Priority</span>
+          <em>4 psychographic segments</em>
+        </div>
+        <div class="an-tools"><i>PCA</i><i>K-means</i></div>
+        <h3>Segmentation for media planning</h3>
+        <p>Using PCA and K-means on Ford Ka consumer research, I identified four psychographic segments. The analysis pointed to fashion-oriented buyers as a priority audience for media planning.</p>
+      </article>
+    </div>
+    <div class="an-stack"><span>Tools</span><i>Python</i><i>Google Analytics 4 (certified)</i><i>Google Ads</i><i>Kiro</i></div>
   </div>
 </section>
 
@@ -562,7 +653,7 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
       <div class="proj-head">
         <div><span class="kind">Series branding</span><h3>Tiny Books</h3></div>
         <div>
-          <p>A pocket-sized series of Nordic literature, made while I studied in Denmark. One visual system ties three covers to two promotional posters, so the books read as one brand.</p>
+          <p>A pocket-sized series of Nordic literature, made while I studied in Denmark. I positioned the books as "pocket-sized escapes" readers can carry anywhere, then built one visual system across three covers so the series reads as a single brand. Two launch posters, one for the series and one for a single title, carry that message to readers.</p>
           <div class="deliv"><span>Series poster</span><span>Book poster</span><span>3 book covers</span></div>
         </div>
       </div>
@@ -579,26 +670,17 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
       </div>
     </div>
 
-    <div class="proj">
-      <div class="proj-head">
-        <div><span class="kind">Museum branding</span><h3>Tranhuset</h3></div>
-        <div>
-          <p>The brief: brand an experiential learning center about Greenland, Iceland and the Faroe Islands. I built the identity around one story. A whale travels through ocean, rock, lava and ice, and the visitor follows it.</p>
-          <div class="deliv"><span>Brand system</span><span>Exhibition poster</span><span>Take-home folder</span><span>Merchandise</span></div>
-        </div>
-      </div>
-      <div class="g-tran2">
-        <figure class="back"><img src="img/back_magic_folder_copy.jpg" alt="Tranhuset folder back page with the whale, a volcano and icebergs" data-cap="Take-home folder, back page"><figcaption>Take-home folder, back page</figcaption></figure>
-        <figure class="post"><img src="img/poster_copy_2.jpg" alt="Tranhuset exhibition poster: The Whale's Tale" data-cap="Exhibition poster"><figcaption>Exhibition poster</figcaption></figure>
-        <figure class="cov"><img src="img/folder_cover.jpg" alt="Tranhuset folder cover and inside spread" data-cap="Take-home folder, cover and inside spread"><figcaption>Folder cover and inside spread</figcaption></figure>
-        <figure class="pal"><img src="img/elements.jpg" alt="Tranhuset logo, color palette, type and storyboard" data-cap="Logo, palette, type and storyboard"><figcaption>Logo, palette, type and storyboard</figcaption></figure>
-      </div>
+    <div class="more-row">
+      <h3 class="more-title">More visual work</h3>
+      <a class="photo-link" href="#tranhuset">
+        <div class="pl-text"><span class="kind">Museum branding</span><b>Tranhuset</b><span class="pl-desc">One story, carried across every visitor touchpoint.</span></div>
+        <div class="pl-strip" aria-hidden="true"><img src="img/poster_copy_2.jpg" alt="" style="object-position:center 30%"><img src="img/back_magic_folder_copy.jpg" alt=""><img src="img/elements.jpg" alt="" style="object-position:left center"></div>
+      </a>
+      <a class="photo-link" href="#photography">
+        <div class="pl-text"><b>Photography</b><span class="pl-desc">Where I practice visual storytelling.</span></div>
+        <div class="pl-strip" aria-hidden="true"><img src="img/photo/fr06.jpg" alt=""><img src="img/photo/fr02.jpg" alt=""><img src="img/d.jpg" alt=""></div>
+      </a>
     </div>
-
-    <a class="photo-link" href="#photography">
-      <div class="pl-text"><span class="eyebrow">More visual work</span><b>Photography</b><span class="pl-go">See the gallery →</span></div>
-      <div class="pl-strip" aria-hidden="true"><img src="img/photo/fr06.jpg" alt=""><img src="img/photo/fr02.jpg" alt=""><img src="img/d.jpg" alt=""></div>
-    </a>
   </div>
 </section>
 
@@ -607,7 +689,7 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
   <div class="wrap sec">
     <div class="sec-head">
       <div><span class="eyebrow">Earlier work</span><h2>Product and UX projects</h2></div>
-      <p>My interest in understanding users began with these HCI projects, exploring how digital and physical experiences could support student life.</p>
+      <p>Marketing starts with understanding users. At Wellesley, I studied Human-Computer Interaction and designed products around real student needs, from mental health support to course advice. Each project began with the same question: what do people actually need? I now bring that question to marketing, using it to shape positioning, messaging and the customer journey.</p>
     </div>
     <div class="cards">
       <a class="ecard" href="https://cs.wellesley.edu/~agp/index.html" target="_blank" rel="noopener"><span class="thumb"><img src="img/hci_goodplace.jpg" width="800" height="500" alt="The Good Place app landing page" loading="lazy"></span><b>The Good Place</b><p>A mental health app for Wellesley students. It works as an emotion tracker, a digital support animal and a guide to campus resources.</p><span>View project ↗</span></a>
@@ -624,8 +706,9 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
     </div>
     <div style="display:grid;gap:32px;min-width:0">
       <div class="txt">
-        <p>I studied Human-Computer Interaction at Wellesley, with minors in Economics and History. I am now finishing an MS in Business Analytics at Columbia.</p>
-        <p>I have studied in the US, Scandinavia, and Asia. I am most interested in B2B technology, agentic AI, and developer communities.</p>
+        <p>I am a product marketer who works where technology, data and storytelling meet.</p>
+        <p>I started in Human-Computer Interaction at Wellesley, where I learned to design around what users need. At Columbia, Business Analytics taught me to test those instincts with data. At AWS, I brought both to a real technical product, turning AgentCore demos into a self-serve experience for developers.</p>
+        <p>Together, these shape how I work. I start with who the product is for and the problem it solves, use data to check what resonates, and make ideas tangible early so teams can align around something concrete. Having studied in the US, Scandinavia and Asia, I am used to telling the same product story to very different audiences, in English and Chinese.</p>
       </div>
       <dl class="facts">
         <div class="fact"><dt>Education</dt><dd>Columbia University, MS Business Analytics, Dec 2026<br>Wellesley College, BA Media Arts and Sciences, summa cum laude</dd></div>
@@ -636,6 +719,30 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
   </div>
 </section>
 </main>
+</div>
+
+<div data-view="tranhuset" hidden>
+<section class="design band">
+  <div class="wrap sec">
+    <a class="back-link" href="#design">← Back to brand design</a>
+    <div class="proj">
+      <div class="proj-head">
+        <div><span class="kind">Museum branding</span><h3>Tranhuset</h3></div>
+        <div>
+          <p>The brief: brand an experiential learning center about Greenland, Iceland and the Faroe Islands. I distilled the brand into one core story, a whale traveling through ocean, rock, lava and ice, and designed every touchpoint around it. The poster draws visitors in, the visit follows the whale's journey, and the take-home folder and merchandise carry the story home.</p>
+          <div class="deliv"><span>Brand system</span><span>Exhibition poster</span><span>Take-home folder</span><span>Merchandise</span></div>
+        </div>
+      </div>
+      <div class="g-tran2">
+        <figure class="back"><img src="img/back_magic_folder_copy.jpg" alt="Tranhuset folder back page with the whale, a volcano and icebergs" data-cap="Take-home folder, back page"><figcaption>Take-home folder, back page</figcaption></figure>
+        <figure class="post"><img src="img/poster_copy_2.jpg" alt="Tranhuset exhibition poster: The Whale's Tale" data-cap="Exhibition poster"><figcaption>Exhibition poster</figcaption></figure>
+        <figure class="cov"><img src="img/folder_cover.jpg" alt="Tranhuset folder cover and inside spread" data-cap="Take-home folder, cover and inside spread"><figcaption>Folder cover and inside spread</figcaption></figure>
+        <figure class="pal"><img src="img/elements.jpg" alt="Tranhuset logo, color palette, type and storyboard" data-cap="Logo, palette, type and storyboard"><figcaption>Logo, palette, type and storyboard</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
 </div>
 
 <div data-view="photography" hidden>
@@ -699,7 +806,7 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
   document.getElementById('lbClose').addEventListener('click',close);
   lb.addEventListener('click',function(e){if(e.target===lb)close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
-  var pages=['photography'];
+  var pages=['photography','tranhuset'];
   function route(){
     var h=(location.hash||'').slice(1), v=pages.indexOf(h)>-1?h:'home';
     document.querySelectorAll('[data-view]').forEach(function(el){el.hidden=el.getAttribute('data-view')!==v});
@@ -726,6 +833,7 @@ header[id],section[id],article[id]{scroll-margin-top:64px}
   route();
 })();
 </script>
+
 
 </body>
 </html>
